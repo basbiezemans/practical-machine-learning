@@ -55,7 +55,7 @@ subset.dim
 
 ## Model Building
 
-In the [research paper](http://groupware.les.inf.puc-rio.br/public/papers/2013.Velloso.QAR-WLE.pdf) they suggest a Random Forest algorithm because of the characteristic noise in sensor data. They used bagging with an ensemble of classifiers. I decided to find out what the result would be of a single random forest classifier. Unfortunately the _caret_ package didn't install properly so I installed the _randomForest_ package instead.
+In the [research paper](http://groupware.les.inf.puc-rio.br/public/papers/2013.Velloso.QAR-WLE.pdf) they suggest a Random Forest algorithm because of the characteristic noise in sensor data. They used bagging with an ensemble of classifiers. I decided to find out what the result would be of a single random forest classifier.
 
 Creating a random forest model with 56 features can be computationally intensive. In order to reduce the number of features we need to find out which ones are important. In the research paper they used a feature selection algorithm based on correlation. I decided to select the features based on the mean decrease in accuracy when a variable is not used in building a tree. To reduce the runtime I selected a sample of 2000 rows.
 

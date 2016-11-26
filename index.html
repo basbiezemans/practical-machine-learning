@@ -162,7 +162,7 @@ subset.dim</code></pre>
 </div>
 <div id="model-building" class="section level2">
 <h2>Model Building</h2>
-<p>In the <a href="http://groupware.les.inf.puc-rio.br/public/papers/2013.Velloso.QAR-WLE.pdf">research paper</a> they suggest a Random Forest algorithm because of the characteristic noise in sensor data. They used bagging with an ensemble of classifiers. I decided to find out what the result would be of a single random forest classifier. Unfortunately the <em>caret</em> package didn’t install properly so I installed the <em>randomForest</em> package instead.</p>
+<p>In the <a href="http://groupware.les.inf.puc-rio.br/public/papers/2013.Velloso.QAR-WLE.pdf">research paper</a> they suggest a Random Forest algorithm because of the characteristic noise in sensor data. They used bagging with an ensemble of classifiers. I decided to find out what the result would be of a single random forest classifier.</p>
 <p>Creating a random forest model with 56 features can be computationally intensive. In order to reduce the number of features we need to find out which ones are important. In the research paper they used a feature selection algorithm based on correlation. I decided to select the features based on the mean decrease in accuracy when a variable is not used in building a tree. To reduce the runtime I selected a sample of 2000 rows.</p>
 <pre class="r"><code>sample &lt;- slice(group_by(pml.subset, classe), 1:400)
 sample &lt;- as.data.frame(pml.subset) # grouped_df to data.frame
