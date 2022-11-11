@@ -3,4 +3,4 @@ Practical Machine Learning course project
 
 ## HTML version
 
-<https://basbiezemans.github.io/Practical-Machine-Learning/>
+[Visit site](https://basbiezemans.github.io/practical-machine-learning.github.io/)
